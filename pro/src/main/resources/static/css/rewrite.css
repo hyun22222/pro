@@ -1,0 +1,189 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+ caption, tbody, tfoot, thead,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* --------------------- css reset code ---------------------- */
+
+
+header{
+	    border-bottom: solid;
+        border-bottom-color: #CDCCFF;
+}
+
+.div-top{
+	width: 1200px;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 20px;
+	color: #69008E;
+	margin: 0 auto;
+}
+
+.img1{
+    margin-top: 130px;
+    width: 220px;
+    height: 218px;
+}
+
+/*--------------------------------------header-------------------------------------*/
+
+.main-form{
+    width: 984px;
+    margin: 0 auto;
+    margin-top: 140px;
+}
+
+.ma-input{
+    display: flex;
+    gap: 16px;
+    margin-bottom: 36px;
+}
+
+
+.ulbtn{
+    height: 48px;
+    width: 184px;
+    background-color: #CDCCFF;
+    outline: none;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+}
+
+#select {
+	width: 184px;
+	color: #6200EE;
+	font-size: 16px;
+	overflow: hidden;
+	transition: 0.5s;
+	position: absolute;
+	border: none;
+}
+
+
+.option{
+	position: relative;
+	width: 166px;
+	height: 40px;
+	display: flex;
+    align-items: center;
+	border: 1px #6200EE solid;
+	background-color: #CDCCFF;
+	z-index: 1;
+	border-radius: 6px;
+	padding-left: 16px;
+}
+
+.input-2{
+    height: 48px;
+    width: 784px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    outline: none;
+    border-radius: 10px;
+    border-color: #CDCCFF;
+    font-size: 20px;
+}
+
+#editor{
+	width: 984px;
+	height: 700px;
+	margin: 0 auto;
+	border-radius: 10px;
+	border-color: #CDCCFF;
+}
+
+.ql-toolbar.ql-snow{
+	width: 984px;
+    margin: 0 auto;
+	background-color: #CDCCFF;
+	border-radius: 10px;
+	border-color: #69008E;
+}
+
+.ma-bot-div1{
+     display: flex;
+     justify-content: flex-end;
+     margin-top: 36px;
+     gap: 26px;
+ }
+
+.but1{
+	width: 118px;
+    height: 48px;
+	background-color: white;
+    color: #6077CB;
+	border-color: #6077CB;
+	border-radius: 10px;
+	border-style: double;
+	font-weight: bolder;
+}
+
+.a{
+	width: 118px;
+    height: 48px;
+	background-color: #6077CB;
+	color: white;
+	border-radius: 10px;
+	border-color: #6077CB;
+	border-style: double;
+	font-weight: bolder;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.foot{
+	height: 80px;
+	background-color: #CDCCFF;
+	margin-top: 70px;
+}

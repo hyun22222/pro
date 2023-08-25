@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf/org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/boardList.css">
+    <title>Title</title>
+</head>
+<body>
+<header>
+    <div class="div-top">
+        <p>Home</p>
+        <img alt="logo" class="img1" src="/image/mainLogo1.png">
+        <p>Login</p>
+    </div>
+</header>
+<main>
+    <form class="form1">
+        <div class="ma-top">
+            <p class="p2">자유게시판</p>
+            <button class="but1" type="submit" formaction="/write1">글쓰기</button>
+        </div>
+    </form>
+    <div class="main">
+        <div class="ma2">
+            <div class="ma2-1">
+                <table class="table" border="1">
+                    <tr id="t-tr1">
+                        <th class="t-uid">글번호</th>
+                        <th class="t-title">제목</th>
+                        <th class="t-writer">글쓴이</th>
+                        <th class="t-views">조회수</th>
+                        <th class="t-views">등록일</th>
+                    </tr>
+
+                    <tr class="t-tr" th:each="list : ${pagingAll}">
+                        <td th:text="${list.uid}"></td>
+                        <td ><a th:text="${list.title}" th:href="@{detail(uid=${list.uid})}"></a></td>
+                        <td></td>
+                        <td>views 0</td>
+                        <td th:text="${list.regdate}"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="ma3">
+                <form th:action="@{boardpaging}" class="page">
+                    <ul class="ma-bot" >
+                        <li>
+                            <a th:href="@{/boardpaging?nowPage=1}"><<</a>
+                        </li>
+                        <li>
+                            <a th:if="${paging.nowPage > 1}" th:href="@{/boardpaging(nowPage=${paging.nowPage -1})}"><</a>
+                        </li>
+                        <li th:each="num :${#numbers.sequence(paging.startPage, paging.endPage)}">
+                            <a th:text="${num}" th:href="@{/boardpaging(nowPage=${num})}" ></a>
+                        </li>
+
+                        <li>
+                            <a th:if="${paging.nowPage < paging.lastPage}" th:href="@{/boardpaging(nowPage=${paging.nowPage +1})}">></a>
+                        </li>
+                        <li>
+                            <a th:href="@{?nowPage={num} (num = ${paging.lastPage})}">>></a>
+                        </li>
+                    </ul>
+                    <input type="text" class="text"  placeholder="검색">
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+    <div class="foot">
+
+    </div>
+</footer>
+</body>
+</html>

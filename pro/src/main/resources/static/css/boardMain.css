@@ -1,0 +1,195 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+ caption, tbody, tfoot, thead,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* --------------------- css reset code ---------------------- */
+
+
+header{
+	    border-bottom: solid;
+        border-bottom-color: #CDCCFF;
+}
+
+.div-top{
+	width: 1200px;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 20px;
+	color: #69008E;
+	margin: 0 auto;
+}
+
+.img1{
+    margin-top: 130px;
+    width: 220px;
+    height: 218px;
+}
+
+/*--------------------------------------header-------------------------------------*/
+
+.main{
+    width: 984px;
+    margin: 0 auto;
+}
+
+.main-top{
+    margin-top: 110px;
+}
+
+.main-text{
+        display: flex;
+        justify-content: space-between;
+}
+
+.table1{
+    /*border: 1 black solid;*/
+    width: 984px;
+    margin-top: 5px;
+}
+
+#t1-tr1{
+    vertical-align: middle;
+    background-color: #F3E9FF;
+    height: 48px;
+}
+
+.t1-tr{
+    vertical-align: middle;
+    height: 48px;
+}
+
+.main-bot{
+    margin-top: 48px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.category{
+    height: 500px;
+    width: 220px;
+    text-align: center;
+    margin-left: 56px;
+}
+
+.category > li{
+    border: 1px solid;
+    height: 61px;
+    border-bottom: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.category > :first-child{
+    height: 65px;
+    background-color: #9896FF
+}
+
+.category > :last-child{
+    border-bottom: 1px solid;
+    height: 60px;
+}
+
+.img2{
+    height: 54px;
+}
+
+.img3{
+    width: 70px
+}
+
+.img4{
+    height: 50px;
+}
+
+.text1{
+    display: flex;
+    justify-content: space-between;
+}
+
+.right2{
+    margin-top: 56px;
+}
+
+.table2{
+    /*border: 1 black solid;*/
+    width: 484px;
+    margin-top: 5px;
+}
+
+.t2-tr{
+    vertical-align: middle;
+    height: 40px;
+}
+
+.text2{
+    display: flex;
+    justify-content: space-between;
+}
+
+.table3{
+    /*border: 1 black solid;*/
+    width: 484px;
+    margin-top: 5px;
+}
+
+.t3-tr{
+    vertical-align: middle;
+    height: 40px;
+}
+
+.foot{
+	height: 80px;
+	background-color: #CDCCFF;
+	margin-top: 70px;
+}
+
+
+

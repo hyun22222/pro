@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf/org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/write.css">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <title>Write</title>
+</head>
+<body>
+    <header>
+        <div class="div-top">
+            <p>Home</p>
+            <img alt="logo" class="img1" src="/image/mainLogo1.png">
+            <p>Login</p>
+        </div>
+    </header>
+    <main>
+        <form th:action="@{upload}" method="post" class="main-form" onsubmit="return set();">
+
+            <div class="ma-input">
+                <div id="up">
+
+                    <button class="ulbtn" type="button">
+                        <p class="main-p">카테고리</p>
+                    </button>
+                    <ul id="select" style="height: 0px;" >
+                        <li value="1" class="option">자유게시판</li>
+                        <li value="2" class="option">현대걸설</li>
+                        <li value="3" class="option">gs</li>
+                        <li value="4" class="option">IBK</li>
+                        <li value="5" class="option">도로공사</li>
+                        <li value="6" class="option">KGC</li>
+                        <li value="7" class="option">흥국생명</li>
+                        <li value="8" class="option">페퍼저축은행</li>
+                    </ul>
+                    <input type="hidden" name="category" id="ctg" value="">
+                </div>
+                <input  class="input-2" type="text" name="title" placeholder="제목">
+            </div>
+            <div id="editor" >
+
+            </div>
+            <input type="hidden" name="text" id="input1">
+            <div class="ma-bot">
+                <div class="ma-bot-div1">
+                    <button class="but1" type="button">취소</button>
+                    <button class="but2" type="submit">작성</button>
+                </div>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <div class="foot">
+
+        </div>
+    </footer>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script>
+        var toolbarOptions = [
+          ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+
+          [{ 'header': 1 }, { 'header': 2 }],               // custom button values
+          [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+          [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
+          [{ 'direction': 'rtl' }],                         // text direction
+
+          [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
+          [{ 'font': [] }],
+          [{ 'align': [] }],
+
+          [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
+          [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+
+          ['clean']                                         // remove formatting button
+        ];
+        var quill = new Quill('#editor', {
+          modules: {
+            toolbar: toolbarOptions
+          },
+          theme: 'snow'
+        });
+
+    </script>
+    <script src="/js/write.js"></script>
+</body>
+</html>

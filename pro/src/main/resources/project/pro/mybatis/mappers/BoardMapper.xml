@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="project.pro.mybatis.mappers.BoardMapper">
+
+    <select id="findAllBoard" resultType="project.pro.dto.BoardDto">
+        SELECT *
+        FROM board_tb;
+    </select>
+
+    <select id="countBoard" resultType="int">
+        SELECT COUNT(*) FROM board_tb;
+    </select>
+
+    <select id="selectBoard" resultType="project.pro.dto.BoardDto">
+        SELECT *
+        FROM board_tb
+        order by uid DESC
+        LIMIT 15 OFFSET #{abc};
+    </select>
+
+    <insert id="uploadBoard">
+        INSERT INTO board_tb(title, text, category)
+        VALUES (#{title},#{text}, #{category});
+    </insert>
+
+    <update id="updateViews">
+        UPDATE board_tb
+        SET views = views + 1
+        WHERE uid = #{uid}
+    </update>
+
+    <select id="selectDetail" resultType="project.pro.dto.BoardDto">
+        SELECT uid, title, text, writer,regdate
+        FROM board_tb
+        WHERE uid = #{uid}
+    </select>
+
+    <update id="updateWrite">
+        UPDATE board_tb
+        SET  uid = #{uid} ,title = #{title}, text = #{text}, writer = #{writer}, regdate = now()
+        WHERE uid = #{uid}
+    </update>
+
+</mapper>
