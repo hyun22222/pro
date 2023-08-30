@@ -167,18 +167,15 @@ header{
 	font-weight: bolder;
 }
 
-.a{
+.but2{
 	width: 118px;
     height: 48px;
-	background-color: #6077CB;
-	color: white;
-	border-radius: 10px;
+	background-color: white;
+    color: #6077CB;
 	border-color: #6077CB;
+	border-radius: 10px;
 	border-style: double;
 	font-weight: bolder;
-	display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 

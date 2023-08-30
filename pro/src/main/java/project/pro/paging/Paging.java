@@ -109,7 +109,6 @@ public class Paging {
         calcLastPage(total, cntPerPage);
         startEndPage(nowPage, cntPage);
 
-        System.out.println(cntPage);
 
     }
 

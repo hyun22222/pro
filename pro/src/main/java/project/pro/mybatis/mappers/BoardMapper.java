@@ -1,7 +1,7 @@
 package project.pro.mybatis.mappers;
 
 import org.apache.ibatis.annotations.Mapper;
-import project.pro.dto.BoardDto;
+import project.pro.board.dto.BoardDto;
 
 import java.util.List;
 
@@ -17,5 +17,7 @@ public interface BoardMapper {
     List<BoardDto> selectBoard(BoardDto boardDto);
     BoardDto selectDetail(BoardDto boardDto);
 
-    BoardDto updateWrite(BoardDto boardDto);
+    void updateWrite(BoardDto boardDto);
+
+    void deleteWrite(BoardDto boardDto);
 }

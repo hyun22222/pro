@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/detail.css">
+    <title>detail</title>
+</head>
+<body>
+<header>
+    <div class="div-top">
+        <p>Home</p>
+        <img alt="logo" class="img1" src="/image/mainLogo1.png">
+        <p>Login</p>
+    </div>
+</header>
+<main>
+    <div class="main">
+        <div class="main-text">
+            <table class="table" border="1" >
+                <tr id="tr-1">
+                    <td th:text="${update.title}" colspan="2"></td>
+                </tr>
+                <tr id="tr-2">
+                    <td>작성자</td>
+                    <td th:text="${update.regdate}"></td>
+                </tr>
+                <tr id="tr-3">
+                    <td th:utext="${update.text}" colspan="2"></td>
+                </tr>
+            </table>
+        </div>
+        <form class="comment">
+            <div class="re-btn">
+                <a class="a" th:href="@{rewrite(uid=${update.uid})}">수정</a>
+            </div>
+            <p class="p1">댓글</p>
+            <div class="comment-1">
+                <input class="write" type="text">
+                <div class="comment-btn">
+                    <button class="btn1" type="submit" >작성</button>
+                    <button class="btn2">취소</button>
+                </div>
+            </div>
+            <div class="comment-2">
+                <table class="table-2" border="1">
+                    <tr id="t1-tr1">
+                        <td>작성자</td>
+                        <td>작성일</td>
+                    </tr>
+                    <tr id="t1-tr2">
+                        <td>내용</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="re-btn2">
+                <button class="btn4" formaction="/boardpaging">목록으로</button>
+            </div>
+        </form>
+    </div>
+</main>
+<footer>
+    <div class="foot">
+
+    </div>
+</footer>
+</body>
+</html>

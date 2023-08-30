@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./css/detail.css">
+    <link rel="stylesheet" href="css/detail.css">
     <title>detail</title>
 </head>
 <body>
@@ -31,6 +31,7 @@
         </div>
         <form class="comment">
             <div class="re-btn">
+                <a class="a" th:href="@{delete(uid=${detail1.uid})}">삭제</a>
                 <a class="a" th:href="@{rewrite(uid=${detail1.uid})}">수정</a>
             </div>
             <p class="p1">댓글</p>

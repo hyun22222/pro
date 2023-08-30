@@ -40,8 +40,14 @@
 
     <update id="updateWrite">
         UPDATE board_tb
-        SET  uid = #{uid} ,title = #{title}, text = #{text}, writer = #{writer}, regdate = now()
+        SET    title = #{title}, text = #{text}, regdate = now(), category = #{category}
         WHERE uid = #{uid}
     </update>
+
+    <delete id="deleteWrite">
+        DELETE
+        FROM board_tb
+        WHERE uid = #{uid}
+    </delete>
 
 </mapper>
