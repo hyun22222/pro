@@ -37,7 +37,7 @@ public class BoardController {
     public String write(Model model){
 
 
-        return "Write";
+        return "write";
     }
 
 
@@ -111,7 +111,6 @@ public class BoardController {
     @PostMapping("test")
     public String test(Model model, @ModelAttribute BoardDto boardDto, RedirectAttributes redirectAttributes){
         boardService.updateWrite(boardDto);
-        System.out.println(boardService.selectDetail(boardDto));
         redirectAttributes.addAttribute("uid",boardService.selectDetail(boardDto).getUid());
 
         return "redirect:detail";

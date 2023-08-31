@@ -91,6 +91,11 @@ header{
     margin-bottom: 16px;
 }
 
+.td1{
+    padding-top: 11px;
+    padding-left: 6px;
+}
+
 .comment1{
     display: flex;
 }
@@ -133,7 +138,21 @@ header{
     font-weight: bolder;
 }
 
-.a{
+.a1{
+	width: 118px;
+    height: 48px;
+	color: #6077CB;
+	border-radius: 10px;
+	border: 2px solid #6077CB;
+	border-style: double;
+	font-weight: bolder;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.a2{
 	width: 118px;
     height: 48px;
 	background-color: #6077CB;
@@ -145,6 +164,7 @@ header{
 	display: flex;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
 }
 
 .btn4{
@@ -161,6 +181,7 @@ header{
 .re-btn{
     display: flex;
     justify-content: flex-end;
+    gap: 16px;
 }
 
 
@@ -169,11 +190,10 @@ header{
     justify-content: flex-end;
 }
 
-.table2{
+.table-2{
     width: 984px;
+    margin-bottom: 16px;
     border: 1px solid #0026AB;
-    border-right: none;
-    border-left: none;
 }
 
 .comment-1{

@@ -34,7 +34,7 @@
 
                     <tr class="t-tr" th:each="list : ${pagingAll}">
                         <td th:text="${list.uid}"></td>
-                        <td ><a th:text="${list.title}" th:href="@{detail(uid=${list.uid})}"></a></td>
+                        <td ><a class="a" th:text="${list.title}" th:href="@{detail(uid=${list.uid})}"></a></td>
                         <td></td>
                         <td>views 0</td>
                         <td th:text="${list.regdate}"></td>

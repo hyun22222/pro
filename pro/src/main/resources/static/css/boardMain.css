@@ -88,6 +88,10 @@ header{
         justify-content: space-between;
 }
 
+.a{
+    text-decoration: none;
+}
+
 .table1{
     /*border: 1 black solid;*/
     width: 984px;

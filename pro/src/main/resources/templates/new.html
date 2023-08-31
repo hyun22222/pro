@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf/org">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./css/new.css">
@@ -14,26 +14,23 @@
     </div>
 </header>
 <main>
-    <form class="main-form">
+    <form class="main-form" th:object="${userDto}" th:action="@{ex}" method="post">
         <div class="div-id">
             <p class="p1">아이디</p>
-            <input type="text" class="input1">
+            <span th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></span>
+            <input type="text" class="input1" name="id"  th:field="*{id}">
         </div>
         <div class="div-item">
             <p class="p1">비밀번호</p>
-            <input type="password" class="input1">
+            <input type="password" class="input1" name="pw">
         </div>
         <div class="div-item">
             <p class="p1">email</p>
-            <input type="email" class="input1">
+            <input type="email" class="input1" name="email">
         </div>
         <div class="div-item">
             <p class="p1">이름</p>
-            <input type="text" class="input1">
-        </div>
-        <div class="div-item">
-            <p class="p1">생년월일</p>
-            <input type="date" class="input1">
+            <input type="text" class="input1" name="name">
         </div>
         <button class="btn" type="submit">회원가입</button>
     </form>

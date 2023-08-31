@@ -3,53 +3,53 @@ package project.pro.board.dao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import project.pro.board.dto.BoardDto;
-import project.pro.mybatis.mappers.BoardMapper;
+import project.pro.mybatis.mappers.Mapper;
 
 import java.util.List;
 
 @Repository
 public class BoardDao {
-    BoardMapper boardMapper;
+    Mapper mapper;
 
     @Autowired
-    public BoardDao(BoardMapper boardMapper){
+    public BoardDao(Mapper mapper){
 
-        this.boardMapper = boardMapper;
+        this.mapper = mapper;
     }
 
     public List<BoardDto> findAllBoard(){
 
-        return boardMapper.findAllBoard();
+        return mapper.findAllBoard();
     }
 
     public void uploadBoard(BoardDto boardDto){
 
-        boardMapper.uploadBoard(boardDto);
+        mapper.uploadBoard(boardDto);
     }
 
     public int countBoard(){
 
-        return boardMapper.countBoard();
+        return mapper.countBoard();
     }
 
     public List<BoardDto> selectBoard(BoardDto boardDto){
 
-        return boardMapper.selectBoard(boardDto);
+        return mapper.selectBoard(boardDto);
     }
 
     public BoardDto selectDetail(BoardDto boardDto){
 
-        return boardMapper.selectDetail(boardDto);
+        return mapper.selectDetail(boardDto);
     }
 
     public void updateWrite(BoardDto boardDto){
 
-        boardMapper.updateWrite(boardDto);
+        mapper.updateWrite(boardDto);
     }
 
     public void deleteWrite(BoardDto boardDto){
 
-        boardMapper.deleteWrite(boardDto);
+        mapper.deleteWrite(boardDto);
     }
 
 
