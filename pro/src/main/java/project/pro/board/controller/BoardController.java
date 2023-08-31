@@ -75,7 +75,6 @@ public class BoardController {
         boardDto.setUid(uid);
 
         model.addAttribute("detail1",boardService.selectDetail(boardDto));
-        System.out.println(boardService.selectDetail(boardDto));
         return "detail";
     }
 

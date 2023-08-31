@@ -14,10 +14,10 @@
     </div>
 </header>
 <main>
-    <form class="main-form" th:object="${userDto}" th:action="@{ex}" method="post">
+    <form class="main-form" th:action="@{ex}" method="post" th:object="${userDto}">
         <div class="div-id">
             <p class="p1">아이디</p>
-            <span th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></span>
+            <span th:errors="*{id}"></span>
             <input type="text" class="input1" name="id"  th:field="*{id}">
         </div>
         <div class="div-item">
