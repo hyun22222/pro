@@ -74,31 +74,43 @@ header{
 
 /*--------------------------------------header-----------------------------------*/
 
-.p2{
-
+.p1{
+    margin-bottom: 8px;
 }
 
 .main-form{
     margin: 200px auto auto;
     width: 784px;
     border: 2px solid #9896FF;
-    height: 800px;
     text-align: center;
 }
 
 .div-id{
     margin-top: 56px;
     margin-bottom: 48px;
+
+}
+
+.span{
+    font-size: 12px;
+    color: red;
+    margin-top: 8px;
 }
 
 .div-item{
     margin-bottom: 48px;
+
 }
 
 .input1{
     width: 376px;
     height: 42px;
+    border: 2px solid #9896FF;
 }
+
+.input1:focus {
+   outline: none;
+ }
 
 .btn{
     width: 384px;
@@ -106,6 +118,7 @@ header{
     background-color: #CDCCFF;
     border: none;
     border-radius: 10px;
+    margin-bottom: 56px;
 }
 
 .foot{

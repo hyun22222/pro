@@ -4,11 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import project.pro.mybatis.mappers.Mapper;
+import org.springframework.web.bind.annotation.*;
 import project.pro.user.dto.UserDto;
 import project.pro.user.service.UserService;
 
@@ -30,18 +26,27 @@ public class UserController {
     }
 
     @PostMapping("join")
-    public String joinUser(UserDto userDto){
+    public String joinUser(@Validated @ModelAttribute UserDto userDto , BindingResult bindingResult){
+        if (bindingResult.hasErrors()){
+            return "new";
+        }
+
         userService.uploadUser(userDto);
 
         return "redirect:/";
     }
 
+    @GetMapping("/join")
+    public String join(@ModelAttribute UserDto userDto) {
 
-    @PostMapping("ex")
-    public String ex(@Validated @ModelAttribute UserDto userDto, BindingResult bindingResult){
-        if (bindingResult.hasErrors()){
-            return "redirect:/join";
-        }
-        return "redirect:/join";
+        return "new";
     }
+
+    /*public String idCheck(UserDto userDto ,String id){
+        userService.idCheck(id);
+
+        if ()
+
+        return "new";
+    }*/
 }

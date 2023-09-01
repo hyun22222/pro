@@ -14,23 +14,26 @@
     </div>
 </header>
 <main>
-    <form class="main-form" th:action="@{ex}" method="post" th:object="${userDto}">
+    <form class="main-form" th:action="@{/join}" method="post" th:object="${userDto}">
         <div class="div-id">
             <p class="p1">아이디</p>
-            <span th:errors="*{id}"></span>
             <input type="text" class="input1" name="id"  th:field="*{id}">
+            <p class="span" th:errors="*{id}"></p>
         </div>
         <div class="div-item">
             <p class="p1">비밀번호</p>
-            <input type="password" class="input1" name="pw">
+            <input type="password" class="input1" name="pw" th:field="*{pw}">
+            <p class="span" th:errors="*{pw}"></p>
         </div>
         <div class="div-item">
             <p class="p1">email</p>
-            <input type="email" class="input1" name="email">
+            <input type="email" class="input1" name="email" th:field="*{email}">
+            <p class="span" th:errors="*{email}"></p>
         </div>
         <div class="div-item">
             <p class="p1">이름</p>
-            <input type="text" class="input1" name="name">
+            <input type="text" class="input1" name="name" th:field="*{name}">
+            <p class="span" th:errors="*{name}"></p>
         </div>
         <button class="btn" type="submit">회원가입</button>
     </form>

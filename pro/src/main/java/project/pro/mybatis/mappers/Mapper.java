@@ -25,4 +25,6 @@ public interface Mapper {
     void uploadUser(UserDto userDto);
 
     int idCheck(String id);
+
+
 }
