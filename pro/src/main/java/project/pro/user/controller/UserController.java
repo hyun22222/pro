@@ -42,11 +42,13 @@ public class UserController {
         return "new";
     }
 
-    /*public String idCheck(UserDto userDto ,String id){
+    public String idCheck(UserDto userDto ,String id){
         userService.idCheck(id);
 
-        if ()
+        if(){
+
+        }
 
         return "new";
-    }*/
+    }
 }

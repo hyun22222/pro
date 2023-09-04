@@ -14,10 +14,10 @@
     </div>
 </header>
 <main>
-    <form class="main-form" th:action="@{/join}" method="post" th:object="${userDto}">
+    <form class="main-form" th:action="@{/join}" method="post" th:object="${userDto}" onsubmit="return test()">
         <div class="div-id">
             <p class="p1">아이디</p>
-            <input type="text" class="input1" name="id"  th:field="*{id}">
+            <input type="text" class="input1" th:field="*{id}">
             <p class="span" th:errors="*{id}"></p>
         </div>
         <div class="div-item">
@@ -43,5 +43,30 @@
 
     </div>
 </footer>
+
+
+<script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+<script>
+    const test = () =>{
+        let idEl = document.querySelector("#id");
+        let pwEl = document.querySelector("#pw");
+        let emailEl = document.querySelector("#email");
+        let nameEl = document.querySelector("#name");
+
+        if(!validator.isLength(idEl.value,{min:4,max:20})&& !validator.matches(idEl.value,('a-z0-9'))){
+            alert("아이디는 영어 소문자와 숫자만 사용하여 4~20자리여야 합니다.");
+            return false;
+        }
+
+        if(!validator.isLength(pwEl.value,{min:8,max:16})&& !validator.matches(pwEl.value,('(?=.*[0-9])','(?=.*[a-zA-Z])','(?=.*\W)','(?=\S+$)'))){
+            alert("비밀번호는 8~16자리수여야 합니다. 영문 대소문자, 숫자, 특수문자를 1개 이상 포함해야 합니다.")
+            return false;
+        }
+
+        if(!validator
+
+    }
+
+</script>
 </body>
 </html>
