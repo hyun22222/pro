@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf/org">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./css/login.css">
@@ -10,7 +10,7 @@
     <div class="div-top">
         <p>Home</p>
         <img alt="logo" class="img1" src="/image/mainLogo1.png">
-        <p>Login</p>
+        <a class="a1" th:href="@{login}">Login</a>
     </div>
 </header>
 <main>
@@ -28,7 +28,7 @@
         </div>
         <div class="div-btn">
             <button type="submit" class="btn">로그인</button>
-            <button class="btn" formaction="/new">회원가입</button>
+            <button class="btn" formaction="/join">회원가입</button>
         </div>
     </form>
 </main>
