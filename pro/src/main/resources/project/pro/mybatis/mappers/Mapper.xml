@@ -61,4 +61,10 @@
         WHERE id = #{id}
     </select>
 
+    <select id="session" resultType="project.pro.user.dto.LoginDto">
+        SELECT *
+        FROM member_tb
+        WHERE id = #{id}
+    </select>
+
 </mapper>

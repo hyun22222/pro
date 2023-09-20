@@ -1,6 +1,7 @@
 package project.pro.mybatis.mappers;
 
 import project.pro.board.dto.BoardDto;
+import project.pro.user.dto.LoginDto;
 import project.pro.user.dto.UserDto;
 
 import java.util.List;
@@ -25,6 +26,8 @@ public interface Mapper {
     void uploadUser(UserDto userDto);
 
     int idCheck(String id);
+
+    LoginDto session(LoginDto loginDto);
 
 
 }

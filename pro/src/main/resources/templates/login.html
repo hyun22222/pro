@@ -14,14 +14,14 @@
     </div>
 </header>
 <main>
-    <form class="main-form">
+    <form class="main-form" th:action="@{session}" method="post">
         <div class="div-id">
             <p class="p1">아이디</p>
-            <input type="text" class="input1" >
+            <input type="text" class="input1" name="id" >
         </div>
         <div class="div-item">
             <p class="p1">비밀번호</p>
-            <input type="password" class="input1">
+            <input type="password" class="input1" name="pw">
         </div>
         <div class="div-item">
             <p>소셜 로그인 자리</p>
