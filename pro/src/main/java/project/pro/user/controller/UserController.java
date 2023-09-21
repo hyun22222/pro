@@ -47,20 +47,29 @@ public class UserController {
     }
 
     @PostMapping("session")
-    public String session(HttpSession session, HttpServletRequest request, LoginDto loginDto,
+    public String session(Model model, HttpSession session, HttpServletRequest request, LoginDto loginDto,
                           @RequestParam String id,
                           @RequestParam String pw){
-        System.out.println(id + pw);
         loginDto = userService.session(loginDto);
-        System.out.println(loginDto);
         session = request.getSession();
-        System.out.println(session.getId());
-        if (loginDto.getId()==id && loginDto.getPw()==pw){
+        if (id.equals(loginDto.getId()) && pw.equals(loginDto.getPw())){
             session.setAttribute("user", loginDto);
-            System.out.println(session.getAttribute("user"));
             session.setMaxInactiveInterval(300);
+            model.addAttribute("user", session.getAttribute("user"));
             return "index";
         }
             return "login";
+    }
+
+    @GetMapping("logout")
+    public  String logout(Model model, HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+
+        if(session !=null){
+            session.invalidate();
+        }
+        return "redirect:/login";
+
+
     }
 }

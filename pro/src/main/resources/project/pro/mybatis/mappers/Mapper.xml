@@ -22,8 +22,8 @@
     </select>
 
     <insert id="uploadBoard">
-        INSERT INTO board_tb(title, text, category)
-        VALUES (#{title},#{text}, #{category});
+        INSERT INTO board_tb(title, text, category, writer)
+        VALUES (#{title},#{text}, #{category}, #{writer});
     </insert>
 
     <update id="updateViews">

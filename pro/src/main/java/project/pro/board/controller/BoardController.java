@@ -9,6 +9,7 @@ import project.pro.board.dto.BoardDto;
 import project.pro.paging.Paging;
 import project.pro.board.service.BoardService;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -34,8 +35,8 @@ public class BoardController {
     }
 
     @RequestMapping("write1")
-    public String write(Model model){
-
+    public String write(Model model, HttpSession session){
+        model.addAttribute("user", session.getAttribute("user"));
 
         return "write";
     }
