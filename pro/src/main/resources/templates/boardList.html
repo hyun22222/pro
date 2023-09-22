@@ -8,16 +8,18 @@
 <body>
 <header>
     <div class="div-top">
-        <p>Home</p>
+        <a class="a1" th:href="@{/}">Home</a>
         <img alt="logo" class="img1" src="/image/mainLogo1.png">
-        <a class="a1" th:href="@{login}">Login</a>
+        <a class="a1" th:unless="${user}" th:href="@{login}">Login</a>
+        <a class="a1" th:if="${user}" th:href="@{logout}">Logout</a>
     </div>
 </header>
 <main>
     <form class="form1">
         <div class="ma-top">
             <p class="p2">자유게시판</p>
-            <button class="but1" type="submit" formaction="/write1">글쓰기</button>
+            <a class="a2" th:if="${user}" th:href="@{write1}" >글쓰기</a>
+            <a class="a2" th:unless="${user}" th:href="@{login}" >글쓰기</a>
         </div>
     </form>
     <div class="main">

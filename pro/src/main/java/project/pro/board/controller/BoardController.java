@@ -51,11 +51,14 @@ public class BoardController {
     }
 
     @RequestMapping("boardpaging")
-    public String paging(Model model,
+    public String paging(Model model, HttpSession session,
                          @RequestParam(value = "nowPage", defaultValue = "1") int nowPage,
                          @RequestParam(value = "cntPerPage", defaultValue = "15")int cntPerPage){
         int total = boardService.countBoard();
         BoardDto boardDto = new BoardDto();
+
+        model.addAttribute("user", session.getAttribute("user"));
+
         boardDto.setAbc((nowPage-1)*cntPerPage);
 
 
@@ -70,43 +73,29 @@ public class BoardController {
     }
 
     @RequestMapping("detail")
-    public String detail(Model model,
+    public String detail(Model model, HttpSession session,
                         @RequestParam("uid")int uid){
         BoardDto boardDto = new BoardDto();
         boardDto.setUid(uid);
+
+        model.addAttribute("user", session.getAttribute("user"));
 
         model.addAttribute("detail1",boardService.selectDetail(boardDto));
         return "detail";
     }
 
     @RequestMapping("rewrite")
-    public String rewrite(Model model,
+    public String rewrite(Model model,HttpSession session,
                          @RequestParam("uid")int uid){
         BoardDto boardDto = new BoardDto();
         boardDto.setUid(uid);
+
+        model.addAttribute("user", session.getAttribute("user"));
 
         model.addAttribute("detail1",boardService.selectDetail(boardDto));
         return "rewrite";
     }
 
-    /*@PostMapping("update")
-    public String updateWrite(BoardDto boardDto, Model model ){
-        boardService.updateWrite(boardDto);
-        System.out.println(boardService.selectDetail(boardDto));
-
-        return "redirect:/update";
-    }
-
-    @RequestMapping("update")
-    public String update(Model model,
-                         @RequestParam("uid")int uid){
-
-        BoardDto boardDto = new BoardDto();
-        boardDto.setUid(uid);
-
-        model.addAttribute("update",boardService.selectDetail(boardDto));
-        return "update";
-    }*/
 
     @PostMapping("test")
     public String test(Model model, @ModelAttribute BoardDto boardDto, RedirectAttributes redirectAttributes){

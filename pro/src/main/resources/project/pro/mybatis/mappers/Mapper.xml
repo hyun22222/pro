@@ -33,7 +33,7 @@
     </update>
 
     <select id="selectDetail" resultType="project.pro.board.dto.BoardDto">
-        SELECT uid, title, text, writer,regdate
+        SELECT uid, title, text, writer, regdate
         FROM board_tb
         WHERE uid = #{uid}
     </select>

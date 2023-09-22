@@ -101,7 +101,7 @@ header{
     font-size: 30px;
 }
 
-.but1{
+.a2{
     width: 120px;
     height: 48px;
 	background-color: #CDCCFF;
@@ -109,6 +109,10 @@ header{
 	border-radius: 10px;
 	border: none;
 	font-weight: bolder;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
 }
 
 .main{

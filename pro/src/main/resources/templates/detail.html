@@ -8,9 +8,10 @@
 <body>
 <header>
     <div class="div-top">
-        <p>Home</p>
+        <a class="a1-1" th:href="@{/}">Home</a>
         <img alt="logo" class="img1" src="/image/mainLogo1.png">
-        <a class="a1-1" th:href="@{login}">Login</a>
+        <a class="a1-1" th:unless="${user}" th:href="@{login}">Login</a>
+        <a class="a1-1" th:if="${user}" th:href="@{logout}">Logout</a>
     </div>
 </header>
 <main>
@@ -30,7 +31,7 @@
             </table>
         </div>
         <form class="comment">
-            <div class="re-btn">
+            <div class="re-btn" th:if="${user != null && user.id == detail1.writer}">
                 <a class="a1" th:href="@{delete(uid=${detail1.uid})}">삭제</a>
                 <a class="a2" th:href="@{rewrite(uid=${detail1.uid})}">수정</a>
             </div>
