@@ -33,7 +33,7 @@
                     <li value="7" class="option">흥국생명</li>
                     <li value="8" class="option">페퍼저축은행</li>
                 </ul>
-                <input type="hidden" name="category" id="ctg" value="">
+                <input type="hidden" name="category" id="ctg" th:value="${detail1.category}">
             </div>
             <input class="input-2" type="text" name="title" th:value="${detail1.title}"/>
         </div>
@@ -44,7 +44,7 @@
         <div class="ma-bot">
             <div class="ma-bot-div1">
                 <input type="hidden" name="uid" id="input-uid" th:value="${detail1.uid}">
-                <button class="but1" type="button">취소</button>
+                <button class="but1" formaction="/detail">취소</button>
                 <button class="but2" type="submit" >수정</button>
             </div>
         </div>
