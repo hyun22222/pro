@@ -1,14 +1,14 @@
 package project.pro.board.controller;
 
-import com.sun.xml.internal.ws.server.ServerRtException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import project.pro.board.dto.BoardDto;
-import project.pro.paging.Paging;
 import project.pro.board.service.BoardService;
+import project.pro.paging.Paging;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
@@ -35,7 +35,7 @@ public class BoardController {
     }
 
     @RequestMapping("write1")
-    public String write(Model model, HttpSession session){
+    public String write(Model model, HttpSession session, HttpServletRequest request){
         model.addAttribute("user", session.getAttribute("user"));
 
         return "write";
@@ -71,6 +71,7 @@ public class BoardController {
 
         return "BoardList";
     }
+
 
     @RequestMapping("detail")
     public String detail(Model model, HttpSession session,

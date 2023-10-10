@@ -8,7 +8,7 @@
 <body>
 <header>
     <div class="div-top">
-        <p>Home</p>
+        <a class="a1" th:href="@{/}">Home</a>
         <img alt="logo" class="img1" src="/image/mainLogo1.png">
         <a class="a1" th:href="@{login}">Login</a>
     </div>
@@ -18,22 +18,22 @@
         <div class="div-id">
             <p class="p1">아이디</p>
             <input type="text" class="input1" th:field="*{id}">
-            <p class="span" th:errors="*{id}"></p>
+            <p class="span" ></p>
         </div>
         <div class="div-item">
             <p class="p1">비밀번호</p>
             <input type="password" class="input1" name="pw" th:field="*{pw}">
-            <p class="span" th:errors="*{pw}"></p>
+            <p class="span" ></p>
         </div>
         <div class="div-item">
             <p class="p1">email</p>
             <input type="email" class="input1" name="email" th:field="*{email}">
-            <p class="span" th:errors="*{email}"></p>
+            <p class="span" ></p>
         </div>
         <div class="div-item">
             <p class="p1">이름</p>
             <input type="text" class="input1" name="name" th:field="*{name}">
-            <p class="span" th:errors="*{name}"></p>
+            <p class="span" ></p>
         </div>
         <button class="btn" type="submit">회원가입</button>
     </form>
@@ -63,9 +63,18 @@
             return false;
         }
 
-        if(){
-
+        if(!validator.isLength(emailEl.value,{min:1,max: 100})){
+            alert("이메일을 입력하지 않았습니다.")
+            return false;
         }
+
+        if(!validator.isLength(nameEl.value,{min:1,max: 5})){
+            alert("이름을 입력하지 않았습니다.")
+            return false;
+        }
+
+        alert("회원가입이 완료 되었습니다.")
+
 
     }
 

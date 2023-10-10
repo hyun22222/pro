@@ -174,10 +174,10 @@ header{
 .but2{
 	width: 118px;
     height: 48px;
-	background-color: white;
-    color: #6077CB;
-	border-color: #6077CB;
+	background-color: #6077CB;
+	color: white;
 	border-radius: 10px;
+	border-color: #6077CB;
 	border-style: double;
 	font-weight: bolder;
 }

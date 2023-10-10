@@ -1,6 +1,5 @@
 package project.pro.user.controller;
 
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -12,14 +11,12 @@ import project.pro.user.service.UserService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
 
 @Controller
 public class UserController {
     UserService userService;
 
     public UserController(UserService userService){
-
         this.userService = userService;
     }
 
@@ -37,7 +34,8 @@ public class UserController {
 
         userService.uploadUser(userDto);
 
-        return "redirect:/";
+
+        return "redirect:/login";
     }
 
     @GetMapping("/join")
