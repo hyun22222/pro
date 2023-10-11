@@ -50,6 +50,7 @@ public class UserController {
                           @RequestParam String pw){
         loginDto = userService.session(loginDto);
         session = request.getSession();
+
         if (id.equals(loginDto.getId()) && pw.equals(loginDto.getPw())){
             session.setAttribute("user", loginDto);
             session.setMaxInactiveInterval(300);

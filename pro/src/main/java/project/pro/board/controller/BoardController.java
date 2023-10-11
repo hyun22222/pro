@@ -21,10 +21,26 @@ public class BoardController {
         this.boardService = boardService;
     }
 
-//    @RequestMapping("/")
-//    public String home() {
-//        return "index";
-//    }
+    @RequestMapping("/")
+    public String home(Model model, HttpSession session, HttpServletRequest request,
+                       @RequestParam(value = "nowPage", defaultValue = "1") int nowPage,
+                       @RequestParam(value = "cntPerPage", defaultValue = "15")int cntPerPage) {
+        int total = boardService.countBoard();
+        BoardDto boardDto = new BoardDto();
+
+        model.addAttribute("user", session.getAttribute("user"));
+
+        boardDto.setAbc((nowPage-1)*cntPerPage);
+
+
+        Paging paging = new Paging(total, nowPage, cntPerPage);
+
+
+
+        model.addAttribute("paging", paging);
+        model.addAttribute("pagingAll", boardService.selectBoard(boardDto));
+        return "index";
+   }
 
 
     @RequestMapping("login")
