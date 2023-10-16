@@ -53,6 +53,7 @@ table {
 header{
 	    border-bottom: solid;
         border-bottom-color: #CDCCFF;
+        min-width: 1200px;
 }
 
 .div-top{
@@ -197,7 +198,9 @@ header{
 	height: 80px;
 	background-color: #CDCCFF;
 	margin-top: 70px;
+	min-width: 1200px;
 }
+
 
 
 

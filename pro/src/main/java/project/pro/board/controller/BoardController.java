@@ -24,21 +24,18 @@ public class BoardController {
     @RequestMapping("/")
     public String home(Model model, HttpSession session, HttpServletRequest request,
                        @RequestParam(value = "nowPage", defaultValue = "1") int nowPage,
-                       @RequestParam(value = "cntPerPage", defaultValue = "15")int cntPerPage) {
+                       @RequestParam(value = "cntPerPage", defaultValue = "5")int cntPerPage) {
         int total = boardService.countBoard();
         BoardDto boardDto = new BoardDto();
 
         model.addAttribute("user", session.getAttribute("user"));
 
-        boardDto.setAbc((nowPage-1)*cntPerPage);
-
 
         Paging paging = new Paging(total, nowPage, cntPerPage);
 
 
-
         model.addAttribute("paging", paging);
-        model.addAttribute("pagingAll", boardService.selectBoard(boardDto));
+        model.addAttribute("pagingMain", boardService.selectMain(boardDto));
         return "index";
    }
 
@@ -47,7 +44,7 @@ public class BoardController {
     public String board(Model model){
         List<BoardDto> boardDtoList = boardService.findAllBoard();
         model.addAttribute("boardList",boardDtoList);
-        return "Login";
+        return "login";
     }
 
     @RequestMapping("write1")
@@ -85,7 +82,7 @@ public class BoardController {
         model.addAttribute("paging", paging);
         model.addAttribute("pagingAll", boardService.selectBoard(boardDto));
 
-        return "BoardList";
+        return "boardList";
     }
 
 

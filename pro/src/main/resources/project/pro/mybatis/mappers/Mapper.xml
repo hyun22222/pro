@@ -21,6 +21,13 @@
         LIMIT 15 OFFSET #{abc};
     </select>
 
+    <select id="selectMain" resultType="project.pro.board.dto.BoardDto">
+        SELECT *
+        FROM board_tb
+        order by uid DESC
+        LIMIT 5 OFFSET #{mp};
+    </select>
+
     <insert id="uploadBoard">
         INSERT INTO board_tb(title, text, category, writer)
         VALUES (#{title},#{text}, #{category}, #{writer});

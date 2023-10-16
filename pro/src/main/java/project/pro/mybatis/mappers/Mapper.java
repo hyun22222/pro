@@ -16,6 +16,8 @@ public interface Mapper {
     int countBoard();
 
     List<BoardDto> selectBoard(BoardDto boardDto);
+
+    List<BoardDto> selectMain(BoardDto boardDto);
     BoardDto selectDetail(BoardDto boardDto);
 
     void updateWrite(BoardDto boardDto);

@@ -11,9 +11,5 @@
         <module name="pro.pro.main~1" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="pro.pro.main" target="1.8" />
-      <module name="pro.pro.test" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

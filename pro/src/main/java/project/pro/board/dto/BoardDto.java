@@ -2,11 +2,10 @@ package project.pro.board.dto;
 
 import lombok.Data;
 
-import java.rmi.server.UID;
 import java.time.LocalDateTime;
 
 
-
+@Data
 public class BoardDto {
     private int uid;
     private String title;
@@ -16,6 +15,7 @@ public class BoardDto {
     private String text;
     private int category;
     private int abc;
+    private int mp;
 
     public BoardDto() {
     }

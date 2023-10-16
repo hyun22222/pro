@@ -37,6 +37,11 @@ public class BoardService {
         return boardDao.selectBoard(boardDto);
     }
 
+    public List<BoardDto> selectMain(BoardDto boardDto){
+
+        return boardDao.selectMain(boardDto);
+    }
+
     public BoardDto selectDetail(BoardDto boardDto){
 
         return boardDao.selectDetail(boardDto);

@@ -37,6 +37,11 @@ public class BoardDao {
         return mapper.selectBoard(boardDto);
     }
 
+    public List<BoardDto> selectMain(BoardDto boardDto){
+
+        return mapper.selectMain(boardDto);
+    }
+
     public BoardDto selectDetail(BoardDto boardDto){
 
         return mapper.selectDetail(boardDto);

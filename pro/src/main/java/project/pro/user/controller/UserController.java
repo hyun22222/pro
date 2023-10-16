@@ -39,7 +39,7 @@ public class UserController {
     }
 
     @GetMapping("/join")
-    public String join(@ModelAttribute UserDto userDto) {
+    public String join(@ModelAttribute("userDto") UserDto userDto) {
 
         return "new";
     }
@@ -55,7 +55,7 @@ public class UserController {
             session.setAttribute("user", loginDto);
             session.setMaxInactiveInterval(300);
             model.addAttribute("user", session.getAttribute("user"));
-            return "index";
+            return "redirect:/";
         }
             return "login";
     }

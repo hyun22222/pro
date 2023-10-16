@@ -32,7 +32,7 @@
                     <th class="t1-regdate">작성일</th>
                 </tr>
 
-                <tr class="t1-tr" th:each="list : ${pagingAll}">
+                <tr class="t1-tr" th:each="list : ${pagingMain}">
                     <td th:text="${list.uid}"></td>
                     <td ><a class="a" th:text="${list.title}" th:href="@{detail(uid=${list.uid})}"></a></td>
                     <td th:text="${list.writer}"></td>
